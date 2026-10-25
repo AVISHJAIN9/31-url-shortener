@@ -1,0 +1,21 @@
+{
+  "name": "url-shortener-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-Stack URL Shortener Application with React 19, Redux Toolkit, Tailwind CSS, Express, and MongoDB",
+  "scripts": {
+    "start:backend": "npm --prefix backend start",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "keywords": [
+    "url-shortener",
+    "mern",
+    "react",
+    "redux-toolkit",
+    "express",
+    "mongodb"
+  ],
+  "license": "ISC"
+}
