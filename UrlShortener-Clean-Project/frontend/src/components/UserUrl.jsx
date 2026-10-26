@@ -79,14 +79,21 @@ const UserUrl = () => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="text-sm">
-                    <a 
-                      href={`http://localhost:3000/${url.short_url}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-900 hover:underline"
-                    >
-                      {`localhost:3000/${url.short_url}`}
-                    </a>
+                    {(() => {
+                      const apiBase = (import.meta.env.VITE_API_URL || 'https://aj-url-shortener.onrender.com').replace(/\/$/, '');
+                      const shortHref = `${apiBase}/${url.short_url}`;
+                      const displayUrl = `${apiBase.replace(/^https?:\/\//, '')}/${url.short_url}`;
+                      return (
+                        <a 
+                          href={shortHref} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-900 hover:underline"
+                        >
+                          {displayUrl}
+                        </a>
+                      );
+                    })()}
                   </div>
                 </td>
                 <td className="px-6 py-4">
