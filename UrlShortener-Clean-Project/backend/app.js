@@ -27,6 +27,8 @@ app.use(cookieParser())
 
 app.use(attachUser)
 
+app.get("/health", (req, res) => res.json({ status: "healthy", service: "URL Shortener API" }));
+
 app.use("/api/user",user_routes)
 app.use("/api/auth",auth_routes)
 app.use("/api/create",short_url)
